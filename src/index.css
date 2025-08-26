@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Adiciona uma transição suave para a troca de tema */
+*,
+*::before,
+*::after {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+/* Custom scrollbar for webkit browsers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button, input, select {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Prevent zoom on inputs in mobile safari */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
